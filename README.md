@@ -1,7 +1,7 @@
 # gRPC.Microsservices
 
-## service --> users ( server )
+### microsservice ➡️ users ( server )
 
-## service --> purchases ( server )
+### microsservice ➡️ purchases ( server )
 
-## API --> express & gRPC client ( client )
+### API ➡️ express & gRPC client ( client )
