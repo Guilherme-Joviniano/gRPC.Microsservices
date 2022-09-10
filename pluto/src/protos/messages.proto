@@ -19,6 +19,7 @@ message RegisterUserRequest {
 
 message UserResponse {
     User user = 1;
+    string error = 2;
 }
 
 message LoginUserRequest {
@@ -29,9 +30,14 @@ message LoginResponse {
     string token = 1;
 }
 
+message AuthenticateRequest {
+    string token = 1;
+}
+
 service UserService {
     rpc getUserById(GetUserByIdRequest) returns (UserResponse);
     rpc registerUser(RegisterUserRequest) returns (UserResponse);
     rpc loginUser(LoginUserRequest) returns (LoginResponse);
+    rpc authenticate(AuthenticateRequest) returns (UserResponse);
 }
 

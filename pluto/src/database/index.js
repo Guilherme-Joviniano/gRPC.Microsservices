@@ -1,7 +1,7 @@
 const moongose = require('mongoose')
 
 // Init moogo connection
-moongose.connect('mongodb://localhost:27017/users', {
+moongose.connect('mongodb+srv://teste:teste@microsservices-tables-a.uvad7dx.mongodb.net/?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });

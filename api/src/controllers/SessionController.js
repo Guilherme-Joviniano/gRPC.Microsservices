@@ -2,18 +2,18 @@ const { promisify } = require('util')
 
 const grpc = require('grpc');
 
-const service = require('../services/user');
+const PlutoService = require('../services/pluto');
 
 class SessionController {
     async store(req, res) {
         const { email, password } = req.body;
-
+    
         const response = await new Promise((resolve, reject) => {
-            service.loginUser({ user: { email, password } }, (err, response) => {
+             PlutoService.loginUser({ user: { email, password } }, (err, response) => {
                 if (err) reject(err)
                 else resolve(response) 
             })
-        }) 
+        }).catch(err => res.send(err))
 
         return res.json(response)
     }

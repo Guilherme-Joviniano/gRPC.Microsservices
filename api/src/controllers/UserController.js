@@ -1,13 +1,13 @@
 const { promisify } = require('util');
 
-const service = require('../services/user');
+const PlutoService = require('../services/pluto');
 
 class UserController {
     async show(req, res) {
         const { id } = req.params
 
         const response = await new Promise((resolve, reject) => {
-            service.getUserById({ id }, (err, response) => {
+            PlutoService.getUserById({ id }, (err, response) => {
                 if(err) reject(err)
                 else resolve(response)
             })
@@ -19,7 +19,7 @@ class UserController {
         const { email, username, password } = req.body;
 
         const response = await new Promise((resolve, reject) => {
-            service.registerUser({ email, username, password }, (err, response) => {
+            PlutoService.registerUser({ email, username, password }, (err, response) => {
                 if(err) reject(err)
                 else resolve(response)
             })

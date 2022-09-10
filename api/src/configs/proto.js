@@ -10,9 +10,11 @@ const loaderConfig = {
     oneofs: true
 }
 
-
 module.exports = {
-    userDef: 
+    plutoDef: 
         protoLoader.loadSync(
-            resolve(__dirname, '..', 'protos', 'user.proto'), loaderConfig)
+            resolve(__dirname, '..', 'protos', 'pluto.proto'), loaderConfig),
+    saturnoDef: 
+        protoLoader.loadSync(
+            resolve(__dirname, '..', 'protos', 'saturno.proto'), loaderConfig)
 }
