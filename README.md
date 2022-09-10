@@ -1,5 +1,3 @@
-# gRPC.Microsservices
-
 ### microsservice ➡️ users ( server )
 
 ### microsservice ➡️ purchases ( server )
